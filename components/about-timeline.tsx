@@ -1,0 +1,82 @@
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+
+const timeline = [
+  {
+    year: "2018",
+    title: "Los Inicios",
+    description: "Fundación de GretSoft con la visión de transformar ideas en soluciones digitales innovadoras.",
+    badge: "Fundación",
+  },
+  {
+    year: "2019",
+    title: "Crecimiento",
+    description: "Expansión del equipo y desarrollo de nuestros primeros proyectos e-commerce de gran escala.",
+    badge: "Expansión",
+  },
+  {
+    year: "2020",
+    title: "Innovación",
+    description: "Implementación de nuevas tecnologías y metodologías ágiles para mejorar nuestros servicios.",
+    badge: "Tecnología",
+  },
+  {
+    year: "2021",
+    title: "Reconocimiento",
+    description: "Reconocidos como una de las empresas de desarrollo web más innovadoras de la región.",
+    badge: "Premios",
+  },
+  {
+    year: "Hoy",
+    title: "Liderando el Cambio",
+    description:
+      "Continuamos innovando y expandiendo nuestros servicios para satisfacer las necesidades digitales del futuro.",
+    badge: "Presente",
+  },
+]
+
+export function AboutTimeline() {
+  return (
+    <section className="py-24 sm:py-32 bg-muted/50">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-base font-semibold leading-7 text-purple-600 dark:text-purple-400">
+            Nuestra Trayectoria
+          </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Un Viaje de Innovación Continua</p>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            Descubre cómo hemos evolucionado y crecido a lo largo de los años, siempre manteniendo nuestro compromiso
+            con la excelencia.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-2xl lg:mt-24">
+          <div className="space-y-8">
+            {timeline.map((item, index) => (
+              <Card key={item.year} className="relative overflow-hidden border-none bg-background/60 backdrop-blur-sm">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-500 to-blue-500" />
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-x-4">
+                    <div className="flex-none rounded-full bg-gray-100 p-2 text-purple-600 dark:bg-gray-800 dark:text-purple-400">
+                      <div className="h-8 w-8 font-bold leading-8 text-center">{item.year}</div>
+                    </div>
+                    <div className="flex-auto">
+                      <div className="flex items-center gap-x-4">
+                        <h3 className="flex-none text-lg font-semibold">{item.title}</h3>
+                        <Badge variant="secondary" className="rounded-full">
+                          {item.badge}
+                        </Badge>
+                      </div>
+                      <p className="mt-3 text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
