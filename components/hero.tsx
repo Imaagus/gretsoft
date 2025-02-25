@@ -39,13 +39,13 @@ export function Hero() {
             </Button>
           </div>
         </div>
-        <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+        <div className="mt-16 mx-auto sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow ">
           <Image
-            src="/placeholder.svg?height=600&width=600"
+            src="/banner (1).jpg"
             alt="Dashboard preview"
             width={600}
             height={600}
-            className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl sm:w-[28.875rem]"
+            className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl sm:w-[28.875rem] rounded-sm"
           />
         </div>
       </div>

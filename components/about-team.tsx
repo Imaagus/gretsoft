@@ -5,45 +5,14 @@ import Link from "next/link"
 
 const team = [
   {
-    name: "Líder de Desarrollo",
+    name: "Fundador",
     role: "Desarrollo Full Stack",
     image: "/placeholder.svg?height=400&width=400",
     social: {
-      twitter: "#",
       linkedin: "#",
       github: "#",
     },
-  },
-  {
-    name: "Diseñador UX/UI",
-    role: "Diseño de Interfaces",
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
-    },
-  },
-  {
-    name: "Desarrollador Frontend",
-    role: "Desarrollo Frontend",
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
-    },
-  },
-  {
-    name: "Desarrollador Backend",
-    role: "Desarrollo Backend",
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
-    },
-  },
+  }
 ]
 
 export function AboutTeam() {
@@ -76,10 +45,6 @@ export function AboutTeam() {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex justify-center space-x-4">
-                      <Link href={person.social.twitter} className="text-white hover:text-purple-400">
-                        <span className="sr-only">Twitter</span>
-                        <Twitter className="h-6 w-6" />
-                      </Link>
                       <Link href={person.social.linkedin} className="text-white hover:text-purple-400">
                         <span className="sr-only">LinkedIn</span>
                         <Linkedin className="h-6 w-6" />

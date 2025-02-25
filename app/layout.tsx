@@ -2,6 +2,7 @@ import type React from "react"
 import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import { cn } from "@/lib/utils"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>{children}</body>
+      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   )
 }

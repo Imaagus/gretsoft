@@ -17,7 +17,7 @@ export function AboutPreview() {
               <span className="text-purple-600 dark:text-purple-400">en Desarrollo Web</span>
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Con más de 5 años de experiencia, en GretSoft nos especializamos en transformar ideas en soluciones
+              Con más de 2 años de experiencia, en GretSoft nos especializamos en transformar ideas en soluciones
               digitales excepcionales. Nuestro equipo combina creatividad y expertise técnico para crear experiencias
               web que destacan.
             </p>
@@ -44,10 +44,10 @@ export function AboutPreview() {
               <div className="p-8">
                 <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   {[
-                    { stat: "100+", label: "Proyectos Completados" },
-                    { stat: "95%", label: "Clientes Satisfechos" },
-                    { stat: "24/7", label: "Soporte Técnico" },
-                    { stat: "5+", label: "Años de Experiencia" },
+                    { stat: "100%", label: "Soluciones a Medida" },
+                    { stat: "Innovación", label: "Como Estándar" },
+                    { stat: "Colaboración", label: "Con Nuestros Clientes" },
+                    { stat: "Visión", label: "Para el Futuro" },
                   ].map((item) => (
                     <div key={item.label} className="border-l-4 border-purple-500 pl-4">
                       <dt className="text-sm font-medium text-muted-foreground">{item.label}</dt>

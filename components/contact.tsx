@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Toaster } from "@/components/ui/toaster"
 import { Mail, Phone, MapPin } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import Link from "next/link"
 
 export function Contact() {
   const { toast } = useToast()
@@ -45,9 +46,9 @@ export function Contact() {
                   <MapPin className="h-7 w-6 text-primary" aria-hidden="true" />
                 </dt>
                 <dd>
-                  Av. Principal 123
+                  Banfield
                   <br />
-                  Ciudad, País
+                  Buenos Aires, Argentina
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -56,9 +57,9 @@ export function Contact() {
                   <Phone className="h-7 w-6 text-primary" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-primary" href="tel:+1234567890">
-                    +1 (234) 567-890
-                  </a>
+                  <Link className="hover:text-primary" href="tel:+541126763301">
+                    +54 11 2676 3301
+                  </Link>
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -67,9 +68,9 @@ export function Contact() {
                   <Mail className="h-7 w-6 text-primary" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-primary" href="mailto:info@gretsoft.com">
-                    info@gretsoft.com
-                  </a>
+                  <Link className="hover:text-primary" href="mailto:gretsoft@gmail.com">
+                    gretsoft@gmail.com
+                  </Link>
                 </dd>
               </div>
             </dl>

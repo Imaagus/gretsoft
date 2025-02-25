@@ -5,7 +5,7 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 export function SiteFooter() {
   return (
     <footer className="bg-muted">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-16 sm:py-20 lg:px-8">
         <div className="flex justify-center">
           <Link href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">GretSoft</span>
@@ -41,18 +41,6 @@ export function SiteFooter() {
           </div>
         </nav>
         <div className="flex justify-center space-x-10">
-          <Link href="#" className="text-muted-foreground hover:text-primary">
-            <span className="sr-only">Facebook</span>
-            <Facebook className="h-6 w-6" />
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary">
-            <span className="sr-only">Instagram</span>
-            <Instagram className="h-6 w-6" />
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary">
-            <span className="sr-only">Twitter</span>
-            <Twitter className="h-6 w-6" />
-          </Link>
           <Link href="#" className="text-muted-foreground hover:text-primary">
             <span className="sr-only">LinkedIn</span>
             <Linkedin className="h-6 w-6" />

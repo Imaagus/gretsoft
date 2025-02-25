@@ -58,7 +58,7 @@ export function Portfolio() {
   const filteredProjects = projects.filter((project) => activeCategory === "all" || project.category === activeCategory)
 
   return (
-    <section id="portfolio" className="py-24 sm:py-32">
+    <section id="portfolio" className="py-16 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">Portfolio</h2>

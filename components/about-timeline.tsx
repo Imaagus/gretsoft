@@ -3,28 +3,10 @@ import { Badge } from "@/components/ui/badge"
 
 const timeline = [
   {
-    year: "2018",
+    year: "2023",
     title: "Los Inicios",
     description: "Fundación de GretSoft con la visión de transformar ideas en soluciones digitales innovadoras.",
     badge: "Fundación",
-  },
-  {
-    year: "2019",
-    title: "Crecimiento",
-    description: "Expansión del equipo y desarrollo de nuestros primeros proyectos e-commerce de gran escala.",
-    badge: "Expansión",
-  },
-  {
-    year: "2020",
-    title: "Innovación",
-    description: "Implementación de nuevas tecnologías y metodologías ágiles para mejorar nuestros servicios.",
-    badge: "Tecnología",
-  },
-  {
-    year: "2021",
-    title: "Reconocimiento",
-    description: "Reconocidos como una de las empresas de desarrollo web más innovadoras de la región.",
-    badge: "Premios",
   },
   {
     year: "Hoy",

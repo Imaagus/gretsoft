@@ -5,7 +5,7 @@ const values = [
   {
     title: "Experiencia",
     description:
-      "Más de 5 años desarrollando soluciones web innovadoras y efectivas para empresas de diversos sectores.",
+      "Más de 2 años desarrollando soluciones web innovadoras y efectivas para empresas de diversos sectores.",
     icon: Users,
   },
   {
@@ -32,8 +32,17 @@ export function About() {
             Transformando negocios a través de la tecnología
           </p>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            En GretSoft, nos especializamos en crear soluciones web que impulsan el crecimiento de tu negocio. Nuestro
-            equipo combina creatividad y experiencia técnica para entregar resultados excepcionales.
+          En GretSoft, creemos que cada negocio merece una presencia digital única y poderosa. Nuestra misión es transformar ideas en soluciones web innovadoras, siempre priorizando la satisfacción del cliente.
+          </p>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          Nos diferenciamos por nuestra cercanía y compromiso: trabajamos de la mano con cada cliente, asegurándonos de que el resultado final sea exactamente lo que necesita. Para nosotros, un proyecto no está terminado hasta que el cliente está completamente satisfecho.
+          </p>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          Fundamos GretSoft con una visión clara: solucionar problemas y crear oportunidades a través de la tecnología. Nos apasiona desarrollar experiencias digitales que no solo funcionen, sino que también aporten valor real a quienes las utilizan.
+          Miramos hacia el futuro con la convicción de que la innovación es clave. Por eso, estamos en constante evolución, explorando nuevas tecnologías y adaptándonos a las necesidades cambiantes del mundo digital.
+          </p>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          Si buscas un equipo que te escuche, te acompañe y haga realidad tu visión con precios accesibles y un servicio personalizado, GretSoft es para vos. 🚀
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

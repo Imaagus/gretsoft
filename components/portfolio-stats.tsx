@@ -2,15 +2,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Code2, Users, Star, Award } from "lucide-react"
 
 const stats = [
-  { name: "Proyectos Completados", value: "100+", icon: Code2 },
-  { name: "Clientes Satisfechos", value: "50+", icon: Users },
-  { name: "Valoración Promedio", value: "4.9/5", icon: Star },
-  { name: "Premios Recibidos", value: "15+", icon: Award },
+  { name: "Soluciones a Medida", value: "100%", icon: Code2 },
+  { name: "Cercanía con el Cliente", value: "Siempre", icon: Users },
+  { name: "Proyectos en Crecimiento", value: "Cada Día", icon: Star },
+  { name: "Visión a Futuro", value: "Innovación Constante", icon: Award },
 ]
+
 
 export function PortfolioStats() {
   return (
-    <div className="relative py-16 sm:py-24">
+    <div className="relative pt-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <dl className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
