@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 import Link from "next/link"
 
 const team = [

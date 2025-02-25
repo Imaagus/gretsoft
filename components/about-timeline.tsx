@@ -34,7 +34,7 @@ export function AboutTimeline() {
 
         <div className="mx-auto mt-16 max-w-2xl lg:mt-24">
           <div className="space-y-8">
-            {timeline.map((item, index) => (
+            {timeline.map((item) => (
               <Card key={item.year} className="relative overflow-hidden border-none bg-background/60 backdrop-blur-sm">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-500 to-blue-500" />
                 <CardContent className="p-6">
