@@ -1,88 +1,83 @@
-import { HeartHandshake, MessageCircle, Wrench, RefreshCw, Shield, Clock } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Shield, Clock, Zap, Users } from "lucide-react"
 
-const services = [
+const features = [
   {
-    title: "Servicio Pre y Post Venta",
-    description:
-      "Asesoramiento completo antes de tu proyecto y soporte continuo después del lanzamiento para garantizar tu éxito.",
-    icon: HeartHandshake,
-    gradient: "from-green-500 to-emerald-500",
-  },
-  {
-    title: "Asesoramiento Personalizado",
-    description:
-      "Te guiamos en cada paso del proceso, ayudándote a tomar las mejores decisiones para tu proyecto digital.",
-    icon: MessageCircle,
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    title: "Mantenimiento Continuo",
-    description:
-      "Servicio de mantenimiento regular para mantener tu sitio actualizado, seguro y funcionando de manera óptima.",
-    icon: Wrench,
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    title: "Actualizaciones Periódicas",
-    description:
-      "Mantén tu sitio al día con las últimas tecnologías y tendencias mediante actualizaciones programadas.",
-    icon: RefreshCw,
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
-    title: "Seguridad Garantizada",
-    description: "Implementación de medidas de seguridad robustas y monitoreo constante para proteger tu inversión.",
-    icon: Shield,
-    gradient: "from-indigo-500 to-purple-500",
-  },
-  {
-    title: "Soporte 24/7",
-    description: "Asistencia técnica disponible en todo momento para resolver cualquier incidencia que pueda surgir.",
+    name: "Soporte Técnico 24/7",
+    description: "Asistencia técnica disponible en todo momento para resolver cualquier problema que pueda surgir.",
     icon: Clock,
-    gradient: "from-pink-500 to-rose-500",
+  },
+  {
+    name: "Actualizaciones Regulares",
+    description: "Mantenemos tu sitio web actualizado con las últimas tecnologías y mejores prácticas de seguridad.",
+    icon: Zap,
+  },
+  {
+    name: "Seguridad Garantizada",
+    description: "Implementamos medidas de seguridad robustas para proteger tu sitio web y los datos de tus usuarios.",
+    icon: Shield,
+  },
+  {
+    name: "Capacitación Personalizada",
+    description: "Te enseñamos a gestionar tu sitio web para que puedas realizar cambios básicos por tu cuenta.",
+    icon: Users,
   },
 ]
 
 export function SupportServices() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-[1800px] px-4 lg:px-6">
+    <section className="relative py-24 sm:py-32">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-purple-600 dark:text-purple-400">
-            Servicios de Soporte
+          <h2 className="inline-flex items-center rounded-full px-4 py-1 text-sm font-medium bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10 dark:ring-blue-700/30">
+            Soporte Continuo
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Comprometidos con tu Éxito</p>
+          <p className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
+            No te dejamos solo después del lanzamiento
+          </p>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Ofrecemos un servicio integral que va más allá del desarrollo. Nos aseguramos de que tu proyecto digital sea
-            un éxito continuo.
+            Nuestro compromiso va más allá del desarrollo inicial. Te ofrecemos soporte continuo para garantizar el
+            éxito a largo plazo de tu presencia digital.
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <Card
-              key={service.title}
-              className="relative overflow-hidden border-none bg-background/60 backdrop-blur-sm transition-transform hover:scale-105"
-            >
-              {/* Gradient border effect */}
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-4">
+            {features.map((feature) => (
               <div
-                className="absolute inset-0 rounded-lg bg-gradient-to-r opacity-10 transition-opacity hover:opacity-20 duration-300 ease-in-out"
-                style={{ backgroundImage: `linear-gradient(to right, ${service.gradient})` }}
-              />
-              <CardHeader>
-                <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r ${service.gradient}`}
+                key={feature.name}
+                className="group relative rounded-xl bg-background/60 backdrop-blur-sm p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-border/50"
+              >
+                <dt className="text-base font-semibold leading-7">
+                  <div className="absolute left-6 top-6 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 group-hover:bg-indigo-600 transition-colors duration-300">
+                    <feature.icon className="h-5 w-5 text-white" aria-hidden="true" />
+                  </div>
+                  <div className="ml-16">{feature.name}</div>
+                </dt>
+                <dd className="mt-2 text-base leading-7 text-muted-foreground ml-16">{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 p-px shadow-lg">
+            <div className="rounded-xl bg-background/95 backdrop-blur-sm px-6 py-8 sm:px-8 sm:py-10 text-center">
+              <h3 className="text-xl font-semibold">¿Necesitas soporte para tu sitio web actual?</h3>
+              <p className="mt-2 text-muted-foreground">
+                También ofrecemos servicios de mantenimiento y soporte para sitios web existentes.
+              </p>
+              <div className="mt-6">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300"
                 >
-                  <service.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                </div>
-                <CardTitle className="mt-4 text-xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">{service.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+                  Solicitar soporte
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

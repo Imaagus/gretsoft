@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { MenuIcon } from "lucide-react"
+import { MenuIcon, X } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
 const navigation = [
@@ -17,6 +17,7 @@ const navigation = [
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -30,59 +31,84 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm" : "bg-transparent",
+        isScrolled ? "bg-background/90 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4",
       )}
     >
-      <nav className="mx-auto flex max-w-[1800px] items-center justify-between p-4 lg:px-6" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5 transition-transform duration-300 hover:scale-105">
             <span className="sr-only">GretSoft</span>
             <Image
-              className="h-20 w-auto"
+              className="h-14 w-auto sm:h-16 md:h-18 lg:h-20"
               src="/gretsoft.png"
               alt="GretSoft Logo"
               width={1000}
               height={1000}
+              priority
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-base font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+              className="relative text-base font-semibold leading-6 text-foreground hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
             >
               {item.name}
             </Link>
           ))}
         </div>
 
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Button asChild className="rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <Link href="/#contact">Contáctanos</Link>
+          </Button>
+        </div>
+
         {/* Mobile Navigation */}
         <div className="flex lg:hidden">
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="lg:hidden">
                 <MenuIcon className="h-6 w-6" />
                 <span className="sr-only">Abrir menú</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full sm:w-[350px] pr-0">
-              <SheetHeader>
+            <SheetContent
+              side="right"
+              className="w-full sm:max-w-sm border-l border-border/50 backdrop-blur-lg bg-background/95"
+            >
+              <SheetHeader className="flex flex-row items-center justify-between">
                 <SheetTitle className="text-left">Menú</SheetTitle>
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                  <X className="h-5 w-5" />
+                  <span className="sr-only">Cerrar menú</span>
+                </Button>
               </SheetHeader>
-              <div className="mt-6 flex flex-col gap-4">
+              <div className="mt-8 flex flex-col gap-6">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="flex items-center gap-2 text-lg font-semibold px-4 py-2 rounded-lg hover:bg-muted transition-colors"
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-center gap-2 text-lg font-semibold px-4 py-3 rounded-lg hover:bg-muted transition-all duration-300 ease-in-out"
                   >
-                    {item.name}
+                    <span className="relative overflow-hidden">
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </span>
                   </Link>
                 ))}
+                <div className="mt-4 pt-4 border-t">
+                  <Button asChild className="w-full rounded-full shadow-md">
+                    <Link href="/#contact" onClick={() => setIsOpen(false)}>
+                      Contáctanos
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
